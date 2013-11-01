@@ -1,0 +1,10 @@
+<%= render 'pages/home' %>
+<h1>Events List</h1>
+<div id="Events">
+  <%= render @pins %>
+</div>
+<div>
+	<p>
+		<%= link_to 'New Event', new_pin_path %>
+	</p>
+</div>

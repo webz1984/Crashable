@@ -1,0 +1,16 @@
+<%= simple_form_for(@pin, html: {class: "form-horizontal"}) do |f| %>
+  <%= f.error_notification %>
+  <%= f.full_error :image_file_size, class: "alert alert_error" %>
+  <%= f.full_error :image_content_type, class: "alert alert_error" %>
+  <%= f.input :event_title, :label => "Name of your event",:require => true, :autofocus => true  %>
+  <%= f.input :event_date, :label => "When it will be held", :require => false %>
+  <%= f.input :event_time, :label => "When it will be held", :require => false %>
+  <%= f.input :event_host, :label => "Hosted by", :require => false %>
+  <%= f.input :image, label: "Upload an image" %>
+  <%= f.input :event_free, :label => "free event?", :require => false, :as => :boolean %>
+  <%= f.input :description, :label => "More details", as: :text, input_nm: {rows: "1"} %>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Create event", class: "btn btn-primary" %>
+  </div>
+<% end %>

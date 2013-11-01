@@ -1,0 +1,17 @@
+<% if user_signed_in? %>
+	<p>
+		Your viewed events & Your past selected events
+	</p>
+<% else %>
+	<div class="hero-unit">
+		<h1>Crashable</h1>
+		<p>
+			Crashable: Places to discover inspiring events & Cool meetings,
+			Start explore!
+		</p>
+
+		<p>
+			<%= link_to "Sigh Up Now!",new_user_registration_path, class: "btn btn-primary btn-large" %>
+		</p>
+	</div>
+<% end %>
