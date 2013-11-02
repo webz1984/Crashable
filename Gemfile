@@ -7,7 +7,7 @@ gem 'simple_form'
 gem 'paperclip', "~> 3.0"
 gem 'omniauth'
 gem 'omniauth-facebook'
-
+gem 'rails_12factor'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
