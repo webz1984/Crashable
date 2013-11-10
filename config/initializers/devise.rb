@@ -17,7 +17,9 @@ Devise.setup do |config|
   require "omniauth-facebook"
   config.omniauth :facebook, "600898749974962", "f92155fc9da9ef017fa379a0488f8300",
                   {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
-  config.secret_key = 'f92155fc9da9ef017fa379a0488f8300'               
+  config.secret_key = 'f92155fc9da9ef017fa379a0488f8300' if Rails.env == 'production'
+
+
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
@@ -89,7 +91,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = "b5d311d45ed7f450858df5aaa3e1f7e53974333f42e0fce9c56261de5be58c73d7726b20d39e7cc48785fb9dd40b3b4b66e50137e7efd358e5bd78236723b959"
+  # config.pepper = "aae932e26076b8228f4d5917d64e774fd4969d00faf83ce639ed311f1de945400464a89e13e984bef141f05fd43386787c052116cca017050867dc305570496b"
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without

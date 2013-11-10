@@ -1,14 +1,14 @@
 Crashable::Application.routes.draw do
 
   resources :pins
-
-
-  devise_for :users
-
+  resources :users
   get 'about' => 'Pages#about'
   
   root :to => 'pins#index'
-
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
+  get '/users/auth/facebook' => 'users/omniauth_callbacks#passthru'
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
